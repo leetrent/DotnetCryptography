@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 
 try
 {
-    using (FileStream fileStream = new("C:\\Users\\Lee\\Dev\\GSA\\SecureAuth\\Projects\\Data\\TestData.txt", FileMode.Open))
+    using (FileStream fileStream = new("C:\\Users\\Lee\\Dev\\GSA\\DotnetCryptography\\Projects\\Data\\TestData.txt", FileMode.Open))
     {
         using (Aes aes = Aes.Create())
         {
