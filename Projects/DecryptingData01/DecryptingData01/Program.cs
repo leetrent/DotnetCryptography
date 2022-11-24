@@ -1,6 +1,7 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/standard/security/decrypting-data
 
 using System.Security.Cryptography;
+using System.Text;
 
 try
 {
@@ -20,11 +21,14 @@ try
                 numBytesToRead -= n;
             }
 
-            byte[] key =
-            {
-                0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
-                0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16
-            };
+            //byte[] key =
+            //{
+            //    0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
+            //    0x09, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16
+            //};
+
+            string decryptionKey = "0F33A8759FB79E80E4F6AE34AD15703817C69676AEB28D83";
+            byte[] key = Encoding.ASCII.GetBytes(decryptionKey);
 
             using (CryptoStream cryptoStream = new(
                fileStream,
